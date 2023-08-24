@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- React is an algorithm to efficiently manipulate your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+    <!--  To help react we have React DOM  -> uses react to update the DOM-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+     <!-- transpiler -> JSX -> into javascript -->
+     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- the whole application lives inside the root-->
+      <div id="root"></div>
+
+    <!-- single Page applcation mostly using javascript : JS -->
+    <script type="text/babel">
+       
+       function HELLO(props) {
+            let {age,occupation}=props;
+            let name = "React";
+            
+            // return <h1>Hello {name} Thanks Babel:)</h1>;
+           return <h1>Hello {name} Thanks Babel :) is {age} old and works as {occupation} </h1>;
+        }
+
+        // ReactDOM.render()
+        
+        // -> component : a function that returns HTML
+        
+        // render is a method in REACTDOM -> puts the retruned HTML from component in root element
+        ReactDOM.render(<HELLO></HELLO>,document.getElementById("root"));  //component on higher level that returns a html
+    
+        ReactDOM.render(<HELLO age={35} occupation= {"mentor and SDE"}></HELLO>,document.getElementById("root"));
+        
+        // ReactDOM.render(component,document.getElementById("root"));
+
+
+    //render is basically a method that is part of reactDOM.render() it just internally goes to react and ask
+    //which method we can efficiently get into the UI and then react tells it to put it on the UI
+     
+    //babel is a javascript compiler that can help you convert one language into other
+    //Here we should convert react into javascript as browser only understands html,css and java script
+    
+    //React is just an algorithm that react DOM uses to change the UI by just calling
+    // React.render function
+
+    //we get data from API and we use map function then react automatically uses that and prints output
+    </script>
+</body>
+</html>
+
+
+<!--  
+ 1. component: Components are independent and reusable bits of code. 
+ They serve the same purpose as JavaScript functions, 
+ but work in isolation and return HTML
+ 2. Prop : properties passed to a component
+3. JSX -> Javascript and XML
+4. you create bigger components using smaller component
+-->

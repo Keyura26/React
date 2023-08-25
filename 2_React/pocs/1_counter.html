@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- react -> algo efficiently modify our UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- this libraray actually changes UI -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- BABEL ->JSX -> JS babel is just a kind of transpiler from even   -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+<script type="text/babel">
+//  react has given a method / hook name called use state
+//    React.Usestate() gives  an array
+    function Counter() {
+         
+         // -> useState (0)-> 0 is the inital  value
+            // arr[0]-> state variable
+            // arr1-> function to update state variable
+        const [count, setCount] = React.useState(0);
+
+        console.log("1");
+        const increment=() => {    //using arrow function is good practice
+            //tell react to update count by 1
+            // const count = arr[0];
+            // const updateCount = arr[1];
+            // setCount(1000);
+            setCount(count+1);
+          console.log("Incremented");
+        }
+        console.log("2");
+        const decrement=() => {
+             //tell react to update count by -1
+          console.log("Decremented");
+          setCount(count-1);
+        }
+       
+        console.log("rendered");
+       return <div>
+         <button onClick={increment}>+</button>
+         <p>{count}</p>
+         <button onClick={decrement}>-</button>
+         </div>
+
+       
+   }
+
+  ReactDOM.render(<Counter></Counter>,document.getElementById("root"));
+
+</script>
+
+   
+
+</body>
+</html>
+
+<!-- when the setCount(1000) or setCount()/ setter function is called
+1. It updates your count state variable
+2.Calls the component again -> This is known as re rendering
+3.when we click on increment button setCount(1000) function is called and it sets the 
+count to 1000 and whole code of counter function will be executed except the useState line
+4. REact.useState(0) -> takes inital value for state variable;
+5. It returns an array of statevar and a setterfn  
+-->

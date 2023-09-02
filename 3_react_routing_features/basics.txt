@@ -1,0 +1,31 @@
+1. npm create vite@latest
+
+2. Project name : products
+
+3.Select React as framework
+
+4. select variant as java script
+
+5. cd products
+  npm install
+  npm run dev
+
+------------------------------------
+
+1. ctrl + D - to stop execution and enter into new line command prompt
+
+2. install a module npm i react-router-dom
+
+--------------------------------------
+
+make changes in main.jsx file for routing
+
+create a folder poc under src and create a file name routing.jsx
+
+comment app component and write routing component
+
+write Route component inside routing in routing.jsx file
+
+----------------------------------------
+
+If none of the three routes matches it goes to * route which gives page not found
